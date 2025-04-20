@@ -2,6 +2,19 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
+# 1. Carica un dataset CSV con le anomalie della temperatura globale (dal sito NASA GISTEMP).
+# 2. Pulisce i dati, rimuovendo valori mancanti o simboli come "***".
+# 3. Visualizza l’andamento delle anomalie di temperatura media annuale (J-D) dal 1880 a oggi.
+# 4. Applica una regressione lineare all’intero periodo per calcolare il trend generale del riscaldamento.
+# 5. Applica una seconda regressione solo sugli ultimi 30 anni per evidenziare un’eventuale accelerazione del fenomeno.
+# 6. Stampa nel terminale:
+#       L’innalzamento medio annuo stimato sull’intero periodo.
+#       L’innalzamento medio annuo stimato negli ultimi 30 anni.
+# 7. Salva un’immagine .png con il grafico finale, che include:
+#       i dati reali (in blu),
+#       il trend storico (in rosso),
+#       il trend recente (in arancione tratteggiato).
+
 # Carica il file CSV saltando la prima riga di intestazione doppia
 df = pd.read_csv("GLB.Ts+dSST.csv", skiprows=1)
 
